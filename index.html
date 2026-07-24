@@ -12,17 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      /* Light by default */
-      --page-bg: #ffffff;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --page-bg: #000000;
-      }
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -32,54 +21,31 @@
       margin: 0;
     }
 
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100dvh;
-      padding: 24px;
-      background-color: var(--page-bg);
-      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* The centered square — lapis lazuli signature lifted from the app footer.
+    /* Full-page lapis lazuli — the KYANOS signature lifted from the app footer.
        Deep ultramarine base, soft calcite veining, scattered pyrite gold flecks. */
-    .card {
+    body {
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      width: min(78vw, 78vh, 420px);
-      aspect-ratio: 1 / 1;
-      border-radius: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 16px;
+      min-height: 100dvh;
+      padding: 24px;
       color: #ffffff;
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
 
       background-color: #14224f;
       background-image:
         radial-gradient(130% 90% at 12% -10%, rgba(94, 132, 214, 0.35), transparent 55%),
         radial-gradient(120% 100% at 90% 110%, rgba(20, 40, 110, 0.6), transparent 60%),
         linear-gradient(155deg, #24357f 0%, #182a63 45%, #101d47 100%);
-      box-shadow: 0 30px 60px -25px rgba(16, 29, 71, 0.7);
     }
 
-    .card::before {
-      /* calcite veining */
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background-image:
-        linear-gradient(115deg, transparent 18%, rgba(150, 175, 230, 0.10) 21%, transparent 25%),
-        linear-gradient(200deg, transparent 48%, rgba(120, 150, 220, 0.08) 55%, transparent 62%);
-      mix-blend-mode: screen;
-    }
-
-    .card::after {
+    body::after {
       /* pyrite gold flecks */
       content: "";
       position: absolute;
@@ -98,7 +64,7 @@
 
     .brand {
       margin: 0;
-      font-size: clamp(1.75rem, 8vw, 2.75rem);
+      font-size: clamp(2.25rem, 12vw, 4.5rem);
       font-weight: 600;
       letter-spacing: 0.3em;
       /* nudge to visually centre the tracked-out wordmark */
@@ -108,18 +74,16 @@
 
     .subtitle {
       margin: 0;
-      font-size: 0.8rem;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.6);
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1 class="brand">KYANOS</h1>
-    <p class="subtitle">Launching Soon</p>
-  </main>
+  <h1 class="brand">KYANOS</h1>
+  <p class="subtitle">Launching Soon</p>
 </body>
 </html>
